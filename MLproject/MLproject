@@ -1,0 +1,12 @@
+name: tutorial
+
+conda_env: conda.yaml
+
+entry_points:
+  main:
+    parameters:
+      alpha: {type: float, default: 0.5}
+      l1_ratio: {type: float, default: 0.1}
+      train : {type: string, default: "weather_preprocessing/train.csv"}
+      test : {type: string, default: "weather_preprocessing/test.csv"}
+    command: "python modelling.py {alpha} {l1_ratio} {train} {test}"
